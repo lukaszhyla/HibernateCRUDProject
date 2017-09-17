@@ -13,27 +13,29 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Main main()");
-
 		Scanner scanner = new Scanner(System.in);
-
 		GetEmployeDataFromUser getEmployeDataFromUser = new GetEmployeDataFromUser(scanner);
 
-		// AddEmploye addEmploye = new AddEmploye();
-		// addEmploye.add(getEmployeDataFromUser.getFirstName(),
-		// getEmployeDataFromUser.getLastName(),
-		// getEmployeDataFromUser.getEmail());
+		addEmploye(getEmployeDataFromUser);
+		readEmploye(getEmployeDataFromUser);
+		deleteEmploye(getEmployeDataFromUser);
+		updateEmploye(getEmployeDataFromUser);
 
-		ReadEmploye readEmploye = new ReadEmploye();
-		// System.out.println(readEmploye.read(getEmployeDataFromUser.getId()));
-		//
-		// System.out.println("Delete employe by ID");
-		// DeleteEmploye deleteEmploye = new DeleteEmploye();
-		// deleteEmploye.delete(getEmployeDataFromUser.getId());
+		
+		end(scanner);
+	}
 
+	private static void end(Scanner scanner) {
+		System.out.println("End of program");
+		System.out.println("Main main() scanner.close()");
+		scanner.close();
+	}
+
+	private static void updateEmploye(GetEmployeDataFromUser getEmployeDataFromUser) {
 		System.out.println("Update employ by ID");
 		UpdateEmploye updateEmploye = new UpdateEmploye();
 		int id = getEmployeDataFromUser.getId();
-		Employe employeToUpdate = readEmploye.read(id);
+		Employe employeToUpdate = new ReadEmploye().read(id);
 		System.out.println("Employe to update: " + employeToUpdate);
 
 		System.out.println("If you leave the field blank, it will not be updated");
@@ -47,11 +49,23 @@ public class Main {
 		String email = getEmployeDataFromUser.getEmail();
 
 		updateEmploye.update(id, firstName, lastName, email);
+	}
 
-		System.out.println("End of program");
+	private static void deleteEmploye(GetEmployeDataFromUser getEmployeDataFromUser) {
+		System.out.println("Delete employe by ID");
+		DeleteEmploye deleteEmploye = new DeleteEmploye();
+		deleteEmploye.delete(getEmployeDataFromUser.getId());
+	}
 
-		System.out.println("Main main() scanner.close()");
-		scanner.close();
+	private static void addEmploye(GetEmployeDataFromUser getEmployeDataFromUser) {
+		AddEmploye addEmploye = new AddEmploye();
+		addEmploye.add(getEmployeDataFromUser.getFirstName(), getEmployeDataFromUser.getLastName(),
+				getEmployeDataFromUser.getEmail());
+	}
+
+	private static void readEmploye(GetEmployeDataFromUser getEmployeDataFromUser) {
+		ReadEmploye readEmploye = new ReadEmploye();
+		System.out.println(readEmploye.read(getEmployeDataFromUser.getId()));
 	}
 
 }
