@@ -3,30 +3,24 @@ package com.lhyla.crud;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.lhyla.entity.Employe;
+public class DeleteEmploye {
 
-public class ReadEmploye {
+	public void delete(int id) {
 
-	public Employe read(int id) {
-		
 		SessionFactoryConfiguration sessionFactoryConfiguration = new SessionFactoryConfiguration();
 		SessionFactory sessionFactory = sessionFactoryConfiguration.getConfiguredEmployeSessionFactory();
-		
+
 		Session session = sessionFactory.getCurrentSession();
-		
-		Employe employe;
-		try{
+
+		try {
 			session.beginTransaction();
 			
-			employe = session.get(Employe.class, id);
+			session.createQuery("DELETE FROM Employe WHERE id=" + id).executeUpdate();
 			
 			session.getTransaction().commit();
-		} 
-		finally{
+
+		} finally {
 			sessionFactory.close();
 		}
-		
-
-		return employe;
 	}
 }

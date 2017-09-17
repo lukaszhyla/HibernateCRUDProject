@@ -2,30 +2,30 @@ package com.lhyla.crud;
 
 import java.util.Scanner;
 
-public class GetDataFromUser {
+public class GetEmployeDataFromUser {
 
 	private Scanner scanner;
 
-	public GetDataFromUser(Scanner scanner) {
+	public GetEmployeDataFromUser(Scanner scanner) {
 		this.scanner = scanner;
 	}
 
-	public String getEmployeFirstName() {
+	public String getFirstName() {
 		System.out.println("First name: ");
 		return getString();
 	}
 
-	public String getEmployeLastName() {
+	public String getLastName() {
 		System.out.println("Last name: ");
 		return getString();
 	}
 
-	public String getEmployeEmail() {
+	public String getEmail() {
 		System.out.println("Email: ");
 		return getString();
 	}
 
-	public int getEmployeId() {
+	public int getId() {
 		System.out.println("Id: ");
 		return getInt();
 	}

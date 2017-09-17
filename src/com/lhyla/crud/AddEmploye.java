@@ -7,7 +7,7 @@ import com.lhyla.entity.Employe;
 
 public class AddEmploye {
 
-	public void addEmploye(String firstName, String lastName, String email) {
+	public void add(String firstName, String lastName, String email) {
 
 		System.out.println("AddEmploye addEmploye()");
 		SessionFactory sessionFactory = new SessionFactoryConfiguration().getConfiguredEmployeSessionFactory();
