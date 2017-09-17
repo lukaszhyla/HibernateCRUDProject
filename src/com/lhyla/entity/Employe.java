@@ -61,4 +61,11 @@ public class Employe {
 	public int getId() {
 		return id;
 	}
+
+	@Override
+	public String toString() {
+		return "Employe [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+	}
+	
+	
 }

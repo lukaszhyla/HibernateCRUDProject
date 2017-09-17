@@ -8,7 +8,9 @@ import com.lhyla.entity.Employe;
 public class SessionFactoryConfiguration {
 
 	public SessionFactory getConfiguredEmployeSessionFactory() {
-		return new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employe.class)
+		return new Configuration()
+				.configure("hibernate.cfg.xml")
+				.addAnnotatedClass(Employe.class)
 				.buildSessionFactory();
 	}
 

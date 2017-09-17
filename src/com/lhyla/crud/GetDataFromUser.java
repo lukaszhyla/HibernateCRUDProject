@@ -25,9 +25,19 @@ public class GetDataFromUser {
 		return getString();
 	}
 
+	public int getEmployeId() {
+		System.out.println("Id: ");
+		return getInt();
+	}
+
 	private String getString() {
 		scanner = new Scanner(System.in);
 		String string = scanner.next();
 		return string;
+	}
+
+	private int getInt() {
+		scanner = new Scanner(System.in);
+		return scanner.nextInt();
 	}
 }
