@@ -3,6 +3,7 @@ package com.lhyla.crud;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.lhyla.crud.utils.SessionFactoryConfiguration;
 import com.lhyla.entity.Employe;
 
 public class ReadEmploye {

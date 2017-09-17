@@ -1,6 +1,11 @@
-package com.lhyla.crud;
+package com.lhyla.crud.utils;
 
 import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.lhyla.entity.Employe;
 
 public class GetEmployeDataFromUser {
 

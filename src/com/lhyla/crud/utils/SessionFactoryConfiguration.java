@@ -1,4 +1,4 @@
-package com.lhyla.crud;
+package com.lhyla.crud.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
